@@ -1,0 +1,60 @@
+project/
+│
+├── src/                         # Tüm kaynak kodlar
+│   │
+│   ├── network/                 # Ağ oluşturma ve özellikler
+│   │   ├── __init__.py
+│   │   ├── graph_builder.py     # 250 node + edge özellikleri
+│   │   ├── node_features.py     # node özellikleri
+│   │   └── edge_features.py     # edge özellikleri
+│   │
+│   ├── metrics/                 # 3 metrik + total cost
+│   │   ├── __init__.py
+│   │   ├── delay.py
+│   │   ├── reliability.py
+│   │   └── resource_cost.py
+│   │
+│   ├── algorithms/              # Algoritmalar
+│   │   ├── __init__.py
+│   │   ├── ga.py                # Genetik Algoritma
+│   │   ├── aco.py               # Karınca Kolonisi
+│   │   ├── pso.py               # (opsiyonel)
+│   │   └── qlearning.py         # (opsiyonel RL)
+│   │
+│   ├── utils/                   # Yardımcı araçlar
+│   │   ├── __init__.py
+│   │   ├── path_utils.py        # path okuma/oluşturma fonksiyonları
+│   │   ├── visualization.py      # ağ çizimi + yol renklendirme
+│   │   └── randomness.py        # random seed ayarı
+│   │
+│   └── main.py                  # Projenin ana çalıştırma dosyası
+│
+├── gui/                         # Arayüz
+│   ├── app.py                   # Streamlit veya PyQt5 arayüzü
+│   ├── components/              # GUI bileşenleri
+│   │   ├── weight_sliders.py
+│   │   └── graph_canvas.py
+│
+├── experiments/                 # 20 test + sonuçlar
+│   ├── test_runner.py
+│   ├── results/                 # Kaydedilen sonuçlar
+│   │   ├── ga_results.csv
+│   │   ├── aco_results.csv
+│   │   └── all_results.json
+│   └── plots/                   # Grafik çıktılar (pdf/png)
+│       ├── delay_vs_cost.png
+│       ├── reliability_vs_cost.png
+│       └── comparison.png
+│
+├── docs/                        # Rapor ve dökümantasyon
+│   ├── report.pdf               # Final PDF raporu
+│   ├── presentation.pptx
+│   └── notes.md
+│
+├── data/                        # (İsteğe bağlı) Seed, kayıtlı grafikler
+│   ├── topology_seed.json
+│   └── graph_snapshot.pkl
+│
+├── README.md                    # Projenin kurulum & çalıştırma bilgisi
+├── requirements.txt             # Gerekli Python paketleri
+└── .gitignore                   # Gereksiz dosyaları dışarıda tutmak için

@@ -1,69 +1,37 @@
-# Proje Amacı
-Bu proje, Bu projenin temel amacı, 250 düğümlük karmaşık bir ağ topolojisi üzerinde gecikme, güvenilirlik ve bant genişliği metriklerini dikkate alarak bir kaynaktan (S) bir hedefe (D) giden "en iyi" yolu bulmaktır.
+# drb_routing_optimization
+Gecikme, güvenilirlik ve bant genişliği metriklerine göre çok amaçlı rotalama optimizasyonu yapan bir proje.
 
-📂 [Proje klasör yapısı ve dosya açıklamaları](./docs/MD/structure.md)
+# Projenin Kurulumu ve Çalıştırılması
+Bu proje Pipenv kullanılarak oluşturulmuş bir Python sanal ortamında çalışmaktadır. Projeyi kendi bilgisayarınıza kurmak için aşağıdaki adımları takip edin.
+## 1. Gerekli Araçların Kurulu Olup Olmadığını Kontrol Etme
+Aşağıdaki komutlarla işletim sisteminize göre Git, Python, pip ve Pipenv’in kurulu olup olmadığını kontrol edin.
+- ### [<img width="18" src="https://img.icons8.com/?size=100&id=M9BRw0RJZXKi&format=png&color=000000" alt="windows" border="0"> Windows](docs/setup_windows.md)
+- ### [<img width="18" src="https://img.icons8.com/?size=100&id=122959&format=png&color=000000" alt="windows" border="0"> MacOS](docs/setup_macos.md)
+- ### [<img width="18" src="https://img.icons8.com/?size=100&id=m6O2bFdG70gw&format=png&color=000000" alt="windows" border="0"> Linux](docs/setup_linux.md)
 
-
-## Seed Bilgisi
-Rastgele sayıların tekrar üretilebilirliği için seed kullanılmıştır:
-
-```python```
-
-import random
-
-import numpy as np
-
-SEED = 42
-
-random.seed(SEED)
-
-np.random.seed(SEED)
-
-
-
-## Projenin Kurulumu ve Çalıştırılması
-Bu proje Python `venv` sanal ortamı kullanılarak geliştirilmiştir. Projeyi kendi
-bilgisayarınıza kurmak ve çalıştırmak için aşağıdaki adımları takip edin.
-
-### 1. Gerekli Araçların Kurulu Olup Olmadığını Kontrol Etme
-Git, Python ve pip’in sisteminizde kurulu olduğundan emin olun.
-İşletim sisteminize göre kurulum adımlarına aşağıdaki bağlantılardan ulaşabilirsiniz:
-
-[Kurulum](docs/MD/setup.md)
-
-### 2. Repoyu klonlayın
+## 2. Repoyu Klonlayın ve Proje Klasörüne Girin
 ```bash
-git clone <repo-linki>
-```
-
-### 3. Proje klasörüne girin
-```bash
+git clone <repo-link>
 cd <proje-klasörü>
 ```
-
-### 4. Sanal ortamı oluşturun
+## 3. Sanal Ortamı Oluşturun ve Bağımlılıkları Yükleyin
 Proje klasörü içinde aşağıdaki komutu çalıştırın:
 ```bash
-python -m venv venv
+pipenv install
 ```
-Bu komut, proje için izole bir Python sanal ortamı (```venv```) oluşturur.
+Bu komut ```Pipfile``` ve ```Pipfile.lock``` dosyalarına göre tüm kütüphaneleri yükler.
 
-### 5. Sanal ortamı aktifleştirin
-Windows
-```powershell
-venv\Scripts\activate
-```
-macOS/Linux
+## 4. Sanal Ortamı Aktifleştirin
 ```bash
-source venv/bin/activate
+pipenv shell
 ```
 
-### 6. Gerekli kütüphaneleri indirin
+## 5. Uygulamayı 
+### Windows
 ```bash
-python -m pip install -r requirements.txt
+python src/main.py
 ```
-
-### 7. Uygulamayı çalıştırın
+### MacOS ve Linux
 ```bash
-python -m streamlit run  main.py
+python3 src/main.py
 ```
